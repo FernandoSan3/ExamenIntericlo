@@ -1,0 +1,69 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html">
+
+
+<ui:composition template="/html/template.xhtml">
+	<ui:define name="title">
+        Registro de Productos
+    </ui:define>
+	<ui:define name="contenido">
+		<h:form class="form-horizontal form-material">
+			<div class="form-group">
+				<label for="txtID" class="col-md-12">ID Producto</label>
+				<div class="col-md-12">
+					<h:inputText id="txtID" class="form-control form-control-line"
+						value="#{productosBean.newproductos.id_productos}" />
+					<h:message for="txtID" />
+				</div>
+			</div>
+			<div class="form-group">
+				<label for="txtNombre" class="col-md-12">Nombre</label>
+				<div class="col-md-12">
+					<h:inputText id="txtNombre" class="form-control form-control-line"
+						value="#{productosBean.newproductos.nombre}" />
+					<h:message for="txtNombre" />
+				</div>
+			</div>
+			<div class="form-group">
+				<label for="txtDescripcion" class="col-md-12">Descripcion</label>
+				<div class="col-md-12">
+					<h:inputText id="txtDescripcion"
+						class="form-control form-control-line"
+						value="#{productosBean.newproductos.descripcion}" />
+					<h:message for="txtDescripcion" />
+				</div>
+			</div>
+			<div class="form-group">
+				<label for="txtCategoria" class="col-md-12">Categoria</label>
+				<div class="col-md-12">
+					<h:inputText id="txtCategoria"
+						value="#{productosBean.newproductos.categoria}"
+						class="form-control form-control-line" />
+					<h:message for="txtCategoria" />
+				</div>
+			</div>
+			<div class="form-group">
+				<label for="txtPrecio" class="col-md-12">Precio</label>
+				<div class="col-md-12">
+					<h:inputText id="txtPrecio"
+						value="#{productosBean.newproductos.precio}"
+						class="form-control form-control-line" />
+					<h:message for="txtPrecio" />
+				</div>
+			</div>
+			<div class="form-group">
+				<div class="col-sm-12">
+					<h:commandButton action="#{productosBean.doGuardar()}"
+						value="Guardar" class="btn btn-success" />
+				</div>
+			</div>
+		</h:form>
+	</ui:define>
+
+</ui:composition>
+
+
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html">
+
+<ui:composition template="/html/template.xhtml">
+	<ui:define name="title">
+        Listado de Productos
+    </ui:define>
+	<ui:define name="contenido">
+	
+		<h:dataTable value="#{productosBean.listproductos}" var="productos" class="table">
+			<h:column>
+				<f:facet name="header">Nombre</f:facet>
+		    	#{productos.nombre}
+		    </h:column>
+			<h:column>
+				<f:facet name="header">Descripcion</f:facet>
+		    	#{productos.descripcion}
+		    </h:column>
+			<h:column>
+				<f:facet name="header">Categoria</f:facet>
+		    	#{productos.categoria}
+		    </h:column>
+		    <h:column>
+				<f:facet name="header">Precio</f:facet>
+		    	#{productos.precio}
+		    </h:column>
+		</h:dataTable>
+
+	</ui:define>
+
+</ui:composition>
+</html>
